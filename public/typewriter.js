@@ -46,11 +46,21 @@ $(function(){
   });
 
 
-  $("html").click(function(){
-    $("textarea").focus();
-  });
+  selectTextArea = function(){
+    var $t = $("textarea");
+    var t=$t[0],
+    len=t.value.length;
+    if(t.setSelectionRange){
+      t.setSelectionRange(len,len)
+    }
+    $t.focus();
+  }
 
-  $("textarea").focus();
+  $("html").click(function(){
+    selectTextArea()
+  });
+  selectTextArea()
+
 
   setInterval(function(){
     if($("body").hasClass("normal")){

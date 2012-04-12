@@ -51,12 +51,12 @@ textarea {
 .unforgivable .text{
   word-wrap: break-word;
   white-space: pre-wrap;
+  font-size: 18px;
 }
 
 .unforgivable textarea {
   height: 18px;
   width: 1em;
   position: absolute;
-  font-size: 16px;
   overflow:hidden;
 }
