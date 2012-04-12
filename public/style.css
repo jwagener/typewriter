@@ -1,0 +1,62 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, textarea, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit;}
+
+table {border-collapse: collapse; border-spacing: 0;}
+caption, th, td {text-align: left; font-weight: normal;}
+form legend {display: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: "";}
+blockquote, q {quotes: "" "";}
+ol, ul {list-style: none;}
+hr {display: none; visibility: hidden;}
+
+:focus {outline: 0;}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-image: url(paper.png);
+  font-family: 'Belleza', sans-serif;
+
+}
+
+.wrapper {
+  margin: auto;
+  margin-top: 100px;
+  width: 60%;
+}
+
+textarea {
+  font-size: 1.3em;
+  line-height: 1.3em;
+  height: 1.3em;
+  resize: none;
+  font-size: 18px;
+  line-height: 18px;
+  background: none;
+  border: none;
+}
+
+.normal .text {
+  display: none;
+}
+
+.normal textarea {
+  resize: none; 
+  display: block;
+  height: 130px;
+  width: 100%;
+}
+
+.unforgivable .text{
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.unforgivable textarea {
+  height: 18px;
+  width: 1em;
+  position: absolute;
+  font-size: 16px;
+  overflow:hidden;
+}

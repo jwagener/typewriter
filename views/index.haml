@@ -1,0 +1,21 @@
+%html
+  %head
+    %title= [@title, "TypeWriter"].compact.join(" - ")
+    %link{rel: "stylesheet", href: "/style.css", type: "text/css"}
+    %link{rel: "stylesheet", href: "http://fonts.googleapis.com/css?family=Belleza", type: "text/css"}
+    %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
+    %script{src: "/typewriter.js"}
+    %meta{name: "description", content: @body}
+    %meta{name:"viewport", content:"width=890, user-scalable=no"}
+    %meta{:property => 'og:title',        :content => @title || "Untitled"}
+    %meta{:property => 'og:description',  :content => @body}
+    %meta{:property => 'og:site_name',    :content => "TypeWriter.tw"} 
+    %meta{:property => 'og:url',          :content => request.url}
+    %meta{:property => 'og:image',        :content => "http://placehold.it/200/333333?text=T"}
+    %link{rel: "apple-touch-icon-precomposed", href: "http://placehold.it/48/333333?text=T", id: "apple-image"}
+    %meta{name: "apple-mobile-web-app-capable", content: "yes"}
+
+  %body{class: @mode}
+    .wrapper
+      %span.text= @body
+      %textarea= (@body if @mode == "normal")
