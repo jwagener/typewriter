@@ -38,10 +38,6 @@ textarea {
 }
 
 
-.read textarea {
-  display: none;
-}
-
 .normal .text {
   display: none;
 }
@@ -53,12 +49,12 @@ textarea {
   width: 100%;
 }
 
-.unforgivable .text, .read .text{
+.unforgivable .text {
   word-wrap: break-word;
   white-space: pre-wrap;
   font-size: 18px;
 
-  
+
   display: block;
   margin-left: -40px;
   margin-top: -22px;

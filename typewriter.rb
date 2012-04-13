@@ -43,7 +43,7 @@ get '/supersecret' do
 end
 
 get '/:read_key' do
-  @mode = "read"
+  @mode = "normal read"
   doc = Document.first(:read_key => params[:read_key])
   if doc.nil?
     halt 404, "no that document is not here"

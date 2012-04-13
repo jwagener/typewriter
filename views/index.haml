@@ -18,4 +18,4 @@
   %body{class: @mode}
     .wrapper
       %span.text= @body
-      %textarea= (@body if @mode == "normal")
+      %textarea{readonly: @mode.include?("read")}= (@body if @mode.include?("normal"))
