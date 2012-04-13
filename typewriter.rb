@@ -10,6 +10,10 @@ class Document
   property :read_key, String, :key => true
   property :write_key, String
   property :body, Text
+
+  def title
+    (body || "").split("\n").first
+  end
 end
 
 configure do
@@ -33,7 +37,9 @@ get '/' do
 end
 
 get '/supersecret' do
-  Document.all.inspect
+  Document.all.map do |d|
+    [d.read_key, d.write_key, d.title].join "; "
+  end.join "<br/>"
 end
 
 get '/:read_key' do
