@@ -5,7 +5,20 @@ $(function(){
       data: value
     });
   }
+  Typewriter = function(){
+    $textarea = $("textarea");
 
+    return {
+      resize: function(){
+        console.log("resizing");
+        var lines = $textarea.val().split("\n").length;
+        $textarea.css("height", lines * 30 + 100);
+      }
+    }
+  }
+
+
+  window.typewriter = new Typewriter();
 
   update = function(){
     $textarea = $("textarea");
@@ -40,9 +53,9 @@ $(function(){
         e.preventDefault();
         console.log("preventd")
       }
-      var lines = $textarea.val().split("\n").length;
-      $textarea.css("height", lines * 30 + 100);
+      typewriter.resize();
     });
+    typewriter.resize();
   });
 
 
@@ -56,9 +69,14 @@ $(function(){
     $t.focus();
   }
 
-  $("html").click(function(){
+  $("textarea").click(function(e){
+    e.stopImmediatePropagation();
+  });
+
+  $("html").click(function(e){
     selectTextArea()
   });
+
   selectTextArea()
 
 
