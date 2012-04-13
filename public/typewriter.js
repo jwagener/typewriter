@@ -10,7 +10,6 @@ $(function(){
 
     return {
       resize: function(){
-        console.log("resizing");
         var lines = $textarea.val().split("\n").length;
         $textarea.css("height", lines * 30 + 100);
       }
