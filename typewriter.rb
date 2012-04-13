@@ -54,7 +54,10 @@ get '/:read_key' do
 end
 
 get '/:read_key/:write_key' do
-  @mode = params[:mode] || "normal"
+  mode = request.host.split(".").first
+  @mode = "normal"
+  @mode = "unforgivable"       if mode == "unforgivable"
+  @mode = "unforgivable timed" if mode == "timed"
 
   doc = Document.first(:read_key => params[:read_key])
 
@@ -76,7 +79,6 @@ post '/:read_key/:write_key' do
     halt 403, 'go away!'
   else
     doc.update(body: text)
-    p "writing"
   end
 end
 
