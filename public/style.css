@@ -15,54 +15,84 @@ hr {display: none; visibility: hidden;}
 }
 
 html {
-  background-image: url(paper.png);
+  background-image: url(paper-1.png);
   font-family: 'Belleza', sans-serif;
-
 }
 
-.wrapper {
-  margin: auto;
-  margin-top: 100px;
-  width: 60%;
+body {
+  font-size: 1.5em;
 }
 
-textarea {
-  font-size: 1.3em;
-  line-height: 1.3em;
+.page {
+  margin: 10%;
+  width: 80%;
+}
+
+.text {
   height: 1.3em;
   resize: none;
-  font-size: 18px;
-  line-height: 18px;
   background: none;
   border: none;
-}
-
-
-.normal .text {
-  display: none;
-}
-
-.normal textarea {
   resize: none; 
   display: block;
-  height: 130px;
+  height: 100%;
   width: 100%;
 }
 
-.unforgivable .text {
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  font-size: 18px;
-
-
-  display: block;
-  margin-left: -40px;
-  margin-top: -22px;
+@media all and (max-width: 640px) {
+  body {
+    font-size: 1.1em;
+  }
 }
 
-.unforgivable textarea {
-  height: 18px;
-  width: 1em;
+
+.hidden {
+  display: none!important;
+}
+
+.sidebar {
+  height: 100%;
+    -webkit-transition: height 0.1s ease-in;
+  box-shadow: inset 4px 0px 10px #333333;
+  font-size: 0.7em;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  top: 0;
+  right: 0;
   position: absolute;
-  overflow:hidden;
+}
+
+.settings {
+  height: 0px;
+  -webkit-transition: height 0.2s ease-in;
+  box-shadow: inset 0px -2px 10px #333333;
+  font-size: 0.7em;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+body.menu .settings {
+  cursor: initial;
+  height: 200px;
+}
+
+a, a:visited {
+  color: blue;
+}
+
+.upsell {
+  width: 430px;
+  margin: auto;
+}
+
+.upsell p {
+  margin-bottom: 10px;
 }

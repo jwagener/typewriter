@@ -4,18 +4,38 @@
     %link{rel: "stylesheet", href: "/style.css", type: "text/css"}
     %link{rel: "stylesheet", href: "http://fonts.googleapis.com/css?family=Belleza", type: "text/css"}
     %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
+    %script{src: "/underscore.js"}
+    %script{src: "/backbone.js"}
+
     %script{src: "/typewriter.js"}
     %meta{name: "description", content: @body}
-    %meta{name:"viewport", content:"width=700, user-scalable=no"}
+    %meta{name:"viewport", content:"width=640, user-scalable=no"}
     %meta{:property => 'og:title',        :content => @title || "Untitled"}
     %meta{:property => 'og:description',  :content => @body}
     %meta{:property => 'og:site_name',    :content => "TypeWriter.tw"} 
     %meta{:property => 'og:url',          :content => request.url}
     %meta{:property => 'og:image',        :content => "http://placehold.it/200/333333?text=T"}
-    %link{rel: "apple-touch-icon-precomposed", href: "http://placehold.it/48/333333?text=T", id: "apple-image"}
+    %link{rel: "apple-touch-icon-precomposed", href: "/apple.png", id: "apple-image"}
     %meta{name: "apple-mobile-web-app-capable", content: "yes"}
 
-  %body{class: @mode}
-    .wrapper
-      %span.text= @body
-      %textarea{readonly: @mode.include?("read")}= (@body if @mode.include?("normal"))
+  %body{class: @mode + " menu"}
+    .settings.hen
+      .upsell
+        %p To whom it may concern,
+
+        %p
+          I am a typewriter.
+
+          I'll save everything on this page the second you type it and you can easily access it again using the <a href="">pages link</a>.
+          Just bookmark it to make sure you'll find it later.
+          You can also use a <a href="" class="read-only">read-only</a> link to share your writings on the web.
+          It even supports markdown in the read-only mode!
+
+        %p 
+          Kind Regrets<br/>
+          Your Type T.W. Writer
+          (Assembled by <a href="http://johannes.wagener.cc">Johannes Wagener</a>)
+    .sidebar.hidden
+    .page
+      %textarea.text{readonly: @mode.include?("read")}= (@body if @mode.include?("normal"))
+

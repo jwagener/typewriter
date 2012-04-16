@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require 'sinatra'
 require 'haml'
+require 'coffee-script'
 
 require 'dm-core'
 require 'dm-migrations'
@@ -30,6 +31,12 @@ module RandomId
   end
 end
 
+get "/typewriter.js" do
+  content_type "text/javascript"
+  coffee :typewriter
+end
+
+
 get '/' do
   read_key = RandomId.generate
   write_key = RandomId.generate
@@ -56,13 +63,11 @@ end
 get '/:read_key/:write_key' do
   mode = request.host.split(".").first
   @mode = "normal"
-  @mode = "unforgivable"       if mode == "unforgivable"
-  @mode = "unforgivable timed" if mode == "timed"
 
   doc = Document.first(:read_key => params[:read_key])
 
   if doc.nil? || doc.write_key == params[:write_key]
-    @body = (doc && doc.body) || "Welcome to TypeWriter.tw!"
+    @body = (doc && doc.body) || ""
     haml :index
   else
     halt 403, 'go away!'
@@ -81,6 +86,3 @@ post '/:read_key/:write_key' do
     doc.update(body: text)
   end
 end
-
-
-
