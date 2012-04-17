@@ -18,7 +18,32 @@
     %link{rel: "apple-touch-icon-precomposed", href: "/apple.png", id: "apple-image"}
     %meta{name: "apple-mobile-web-app-capable", content: "yes"}
 
-  %body{class: @mode + " menu"}
+  %body{class: @mode + " meu"}
+    .corner
+      .corner-text
+
+        %p <b>TypeWriter.tw</b> by
+        %p Johannes Wagener
+
+        <br/>
+
+        %p
+          %a{href: "http://typewriter.tw/what-is-this", target: "_blank"} What is this?
+
+        %p
+          %a{href: "/", target: "_blank"} Create a new page
+
+        <br/>
+
+        %p Share this page:
+        %p
+          %a{href: "", class: "read-only"} Read-only link 
+
+        %p
+          %a{href: "", class: "read-write"} Read-Write link
+
+      .edge
+
     .settings.hen
       .upsell
         %p To whom it may concern,
