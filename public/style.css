@@ -15,8 +15,12 @@ hr {display: none; visibility: hidden;}
 }
 
 html {
-  background-image: url(paper-1.png);
   font-family: 'Belleza', sans-serif;
+  /*font-family: 'Crimson Text', serif;*/
+}
+
+html, .corner, .edge {
+  background-image: url(background.png);
 }
 
 body {
@@ -123,23 +127,21 @@ input.link {
 .corner {
   width:  40px;
   height: 40px;
-  background-image: url(paper-1.png);
-
 }
 
 .corner-text {
   position: absolute;
   top: 0px;
   right: 0px;
-  font-size: 12px;
+  font-size: 14px;
   overflow: hidden;
   margin-top: 20px;
   margin-right: 20px;
 }
 
 .corner.open {
-  width: 270px;
-  height: 270px;
+  width: 300px;
+  height: 300px;
 }
 
 .edge-old {
@@ -161,7 +163,6 @@ input.link {
   height: 100%;
   box-shadow: 0 0px 9px rgba(0, 0, 0, 0.4), inset 1px 1px 9px #333;
   background-color: rgba(0, 0, 0, 0.19);
-  background-image: url(paper-1.png);
   top: 38%;
   right: 8%;
   position: absolute;

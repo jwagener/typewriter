@@ -3,13 +3,14 @@
     %title= [@title, "TypeWriter"].compact.join(" - ")
     %link{rel: "stylesheet", href: "/style.css", type: "text/css"}
     %link{rel: "stylesheet", href: "http://fonts.googleapis.com/css?family=Belleza", type: "text/css"}
+
     %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
     %script{src: "/underscore.js"}
     %script{src: "/backbone.js"}
 
     %script{src: "/typewriter.js"}
     %meta{name: "description", content: @body}
-    %meta{name:"viewport", content:"width=640, user-scalable=no"}
+    %meta{name:"viewport", content:"width=device-width, user-scalable=no"}
     %meta{:property => 'og:title',        :content => @title || "Untitled"}
     %meta{:property => 'og:description',  :content => @body}
     %meta{:property => 'og:site_name',    :content => "TypeWriter.tw"} 
@@ -23,7 +24,8 @@
       .corner-text
 
         %p <b>TypeWriter.tw</b> by
-        %p Johannes Wagener
+        %p
+          %a{href: "http://johannes.wagener.cc", target: "_blank"} Johannes Wagener
 
         <br/>
 
