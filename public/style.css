@@ -15,8 +15,8 @@ hr {display: none; visibility: hidden;}
 }
 
 html {
-  font-family: 'Belleza', sans-serif;
-  /*font-family: 'Crimson Text', serif;*/
+  /*font-family: 'Belleza', sans-serif;*/
+  font-family: "Georgia";
 }
 
 html, .corner, .edge {
@@ -24,7 +24,8 @@ html, .corner, .edge {
 }
 
 body {
-  font-size: 1.5em;
+  font-size: 1.6em;
+  line-height: 1.8em;
 }
 
 .page {
