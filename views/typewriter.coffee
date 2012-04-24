@@ -13,9 +13,10 @@ $ () ->
         Typewriter.resize
 
       pos = @textVal().length
-      @$text[0].setSelectionRange(pos, pos)
-      @$text.focus()
-      @$text.select()
+      unless $("body").hasClass("read")
+        @$text[0].setSelectionRange(pos, pos)
+        @$text.focus()
+
       $(".read-only").attr("href", @readOnlyLink())
 
       setInterval (=>
