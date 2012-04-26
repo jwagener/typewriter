@@ -178,3 +178,10 @@ input.link {
 body.read .read-write {
   display: none;
 }
+
+p {
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+  line-height: 15px;
+}
