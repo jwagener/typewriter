@@ -7,6 +7,7 @@ $ () ->
       "click": "toggleContextBar"
       "keydown": "handleText"
       "keyup": "handleText"
+      "change #history": "loadDoc"
 
     initialize: () ->
       @$(window).resize () ->
@@ -16,6 +17,12 @@ $ () ->
       unless $("body").hasClass("read")
         @$text[0].setSelectionRange(pos, pos)
         @$text.focus()
+
+        @loadHistory()
+        @updateHistory
+          title: @title()
+          link: window.location.toString()
+        @saveHistory()
 
       $(".read-only").attr("href", @readOnlyLink())
 
@@ -49,9 +56,11 @@ $ () ->
       $(".corner").toggleClass("open")
 
     handleText: (e) ->
-      title = @textVal().split("\n")[0]
-      @updateTitle title
+      @updateTitle @title()
       @resize()
+
+    title: () ->
+      @textVal().split("\n")[0]
 
     textClick: (e) ->
       @$el.removeClass("menu");
@@ -62,6 +71,7 @@ $ () ->
       if @lastValue == undefined
         @lastValue = text
       else if @lastValue != text
+        @saveHistory()
         $.ajax
           type: "POST",
           data: text
@@ -80,8 +90,32 @@ $ () ->
       u.pop()
       u.join("/")
 
+    loadHistory: () ->
+      if window.JSON? && window.localStorage?
+        @history = JSON.parse(localStorage.getItem("history") || "[]")
+      else
+        @history = []
+
+      for doc in @history
+        $("<option/>").text(doc.title).attr("value", doc.link).prependTo("#history")
+
+    updateHistory: (newDoc) ->
+      for doc in @history
+        if doc.link == newDoc.link
+          @history = _.without(@history, doc)
+      @history.push(newDoc)
+
+    saveHistory: () ->
+      if window.JSON? && window.localStorage?
+        localStorage.setItem("history", JSON.stringify(@history))
+
     updateTitle: (docTitle) ->
       title = _([docTitle, "TypeWriter.tw"]).compact().join(" - ")
       window.document.title = title
+
+    loadDoc: (e) ->
+      link = $(e.target).val()
+      if link.match /http/
+        window.location = link
 
   window.Typewriter = new TypewriterView()
