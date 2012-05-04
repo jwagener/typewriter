@@ -185,3 +185,10 @@ p {
   margin-top: 5px;
   line-height: 15px;
 }
+
+.right {
+  float: right;
+}
+#history {
+  width: 125px;
+}
