@@ -100,6 +100,7 @@ $ () ->
       else
         @history = []
 
+      $("#history").html('<option id="title"> ~ your docs ~ </option>');
       for doc in @history
         $("<option/>").text(doc.title).attr("value", doc.link).prependTo("#history")
 
