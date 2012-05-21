@@ -75,6 +75,7 @@ $ () ->
           title: @title()
           link: window.location.toString()
         @saveHistory()
+        @loadHistory()
         $.ajax
           type: "POST",
           data: text
