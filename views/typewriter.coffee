@@ -71,6 +71,9 @@ $ () ->
       if @lastValue == undefined
         @lastValue = text
       else if @lastValue != text
+        @updateHistory
+          title: @title()
+          link: window.location.toString()
         @saveHistory()
         $.ajax
           type: "POST",
