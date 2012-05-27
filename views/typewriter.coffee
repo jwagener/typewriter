@@ -10,7 +10,7 @@ $ () ->
       "change #history": "loadDoc"
 
     initialize: () ->
-      @$(window).resize () ->
+      $(window).resize () ->
         Typewriter.resize
 
       pos = @textVal().length
