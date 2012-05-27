@@ -57,6 +57,8 @@ get '/:read_key' do
     halt 404, "no that document is not here"
   else
     @body = doc.body
+    @title = @body.split("\n")[0] || ""
+    @title = @title.gsub("#", "")
   end
   haml :index
 end
