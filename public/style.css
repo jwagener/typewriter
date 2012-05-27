@@ -1,12 +1,4 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, textarea, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit;}
-
-table {border-collapse: collapse; border-spacing: 0;}
-caption, th, td {text-align: left; font-weight: normal;}
-form legend {display: none;}
-blockquote:before, blockquote:after, q:before, q:after {content: "";}
-blockquote, q {quotes: "" "";}
-ol, ul {list-style: none;}
-hr {display: none; visibility: hidden;}
+textarea {margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit;}
 
 :focus {outline: 0;}
 
@@ -16,7 +8,7 @@ hr {display: none; visibility: hidden;}
 
 html {
   /*font-family: 'Belleza', sans-serif;*/
-  font-family: "Georgia";
+  font-family: "Georgia"!important;
 }
 
 html, .corner, .edge {
@@ -24,8 +16,8 @@ html, .corner, .edge {
 }
 
 body {
-  font-size: 1.6em;
-  line-height: 1.8em;
+  font-size: 1.5em;
+  line-height: 1.5em;
 }
 
 .page {
@@ -42,6 +34,7 @@ body {
   height: 100%;
   width: 100%;
   padding: 15%;
+  line-height: 1.5em;
 }
 
 @media all and (max-width: 640px) {
@@ -180,7 +173,7 @@ body.read .read-write {
   display: none;
 }
 
-p {
+.corner p {
   margin: 0;
   padding: 0;
   margin-top: 5px;
@@ -195,10 +188,10 @@ p {
   width: 125px;
 }
 
-h1 { font-size: 1.5em; }
-h2 { font-size: 1.4em; }
-h3 { font-size: 1.3em; }
-h4 { font-size: 1.2em; }
+h1 { font-size: 1.3em; }
+h2 { font-size: 1.2em; }
+h3 { font-size: 1.1em; }
+h4 { font-size: 1.05em; }
 
 .text p{
   padding-top: 0.2em;
