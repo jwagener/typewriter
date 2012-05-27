@@ -138,6 +138,7 @@ input.link {
   overflow: hidden;
   margin-top: 20px;
   margin-right: 20px;
+  text-align: right;
 }
 
 .corner.open {
@@ -189,6 +190,23 @@ p {
 .right {
   float: right;
 }
+
 #history {
   width: 125px;
 }
+
+h1 { font-size: 1.5em; }
+h2 { font-size: 1.4em; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.2em; }
+
+.text p{
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
+img {
+  margin: auto;
+  display: block;
+}
+

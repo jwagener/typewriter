@@ -7,6 +7,7 @@
     %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
     %script{src: "/underscore.js"}
     %script{src: "/backbone.js"}
+    %script{src: "/markdown.js"}
 
     %script{src: "/typewriter.js"}
     %meta{name: "description", content: @body}
@@ -39,12 +40,14 @@
 
 
         %p
-          Share this page:
+          Share this page as:
 
         %p
-          %a{href: "", class: "read-only"} Read
-          or
-          %a{href: "", class: "read-write"} Write
+          %a{href: "", class: "read-only"} Read-Only
+        %p
+          %a{href: "", class: "read-markdown"} Markdown
+        %p
+          %a{href: "", class: "read-write"} Editable
       .edge
 
     .settings.hen

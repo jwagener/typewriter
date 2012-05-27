@@ -14,7 +14,22 @@ $ () ->
         Typewriter.resize
 
       pos = @textVal().length
-      unless $("body").hasClass("read")
+
+      pathMatch = window.location.pathname.match(/\/([^./]*)(.markdown)?/)
+      read_key = pathMatch[1]
+      format = pathMatch[2]
+
+
+      $(".read-only").attr("href", "/#{read_key}")
+      $(".read-markdown").attr("href", "/#{read_key}.markdown")
+
+
+      if $("body").hasClass("read")
+        if format?
+          converter = new Markdown.Converter()
+          html = converter.makeHtml(@textVal());
+          @$text.replaceWith("<div class='markdown text'>#{html}</div>")
+      else
         @$text[0].setSelectionRange(pos, pos)
         @$text.focus()
 
@@ -24,11 +39,9 @@ $ () ->
           link: window.location.toString()
         @saveHistory()
 
-      $(".read-only").attr("href", @readOnlyLink())
-
-      setInterval (=>
-        @updateRemote(@textVal())
-      ), 1000
+        setInterval (=>
+          @updateRemote(@textVal())
+        ), 1000
 
       $(".corner").click =>
         @toggleCorner()
@@ -60,7 +73,9 @@ $ () ->
       @resize()
 
     title: () ->
-      @textVal().split("\n")[0]
+      t = @textVal().split("\n")[0] || ""
+      t = t.replace("#", "")
+      t
 
     textClick: (e) ->
       @$el.removeClass("menu");
